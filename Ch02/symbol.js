@@ -3,16 +3,16 @@ let str1 = "JavaScript is fun!";
 let str2 = "JavaScript is fun!";
 console.log("These two strings are the same:", str1 === str2);
 
-let sym1 = Symbol("JavaScript is fun!");
-let sym2 = Symbol("JavaScript is fun!");
-console.log("These two Symbols are the same:", sym1 === sym2);
+let sym1 = Symbol("JavaScript is fun!"); // False 
+let sym2 = Symbol("JavaScript is fun!"); //False 
+console.log("These two Symbols are the same:", sym1 === sym2);  //False === False    
 
 
 /*page 26 Undefined*/
 let unassigned;
 console.log(unassigned);
 
-/*NB! NOT ALLOWED*/
+/*NB! NOT GOOD PRACTIC*/
 let terribleThingToDo = undefined;
 console.log(terribleThingToDo);
 
