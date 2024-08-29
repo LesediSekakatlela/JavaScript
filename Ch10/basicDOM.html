@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Let's find the treasure</h1>
+    <div id="forest">
+        <div id="tree1">
+            <div id="squirrel"></div>
+            <div id="flower"></div>
+        </div>
+        <div id="tree2">
+            <div id="shrubbery">
+                <div id="treasure"></div>
+            </div>
+            <div id="mushroom">
+                <div id="bug"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--<div id="forest"> It acts as the parent element for everything inside it. 
+<div id="tree1">  AND <div id="tree2"> are the child elements of <div id="forest">
+Children of tree1 = squirrel and  flower
+Children of tree2 = shrubbery, and mushroom 
+treasure = It's a child element of <div id="shrubbery">
+bug = It's a child element of <div id="mushroom">
+
+
+-->
+
+<!--  console.dir(document.body.children.forest.children.tree2.children.shrubbery.children.treasure);
+console.dir: This is a method in JavaScript that displays an interactive list of the properties
+document.body.children: This accesses the direct child nodes of the <body> element in the HTML document.
+.forest: This accesses the element with the id "forest" among the children of the <body> element.
+.children.tree2: This accesses the child element with the id "tree2" among the children of the element with the id "forest".
+.children.shrubbery: This accesses the child element with the id "shrubbery" among the children of the element with the id "tree2".
+.children.treasure: This accesses the child element with the id "treasure" among the children of the element with the id "shrubbery".
+ -->
+
+ <!-- console.dir(document.body.childNodes[3].childNodes[3].childNodes[1].childNodes[1]);
+In JavaScript, the childNodes property returns a collection of child nodes of the specified parent node. Each child node can include elements, text nodes, comments.
+When you access childNodes[3], you're retrieving the fourth child node of the parent node. So it's referencing the fourth child node of the <body> element.
+childNodes[3].childNodes[3]: accesses the fourth child node of the previously accessed node, which is the fourth child node of the <body> element.
+It also  refers to a nested child node within the <body> element.
+
+.childNodes[1]: This accesses the second child node of the previously accessed node.
+childNodes[1].childNodes[1] refers to a nested child node within the previously accessed node.
+-->

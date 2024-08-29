@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Character options</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        let text = "d";
+        console.log(text.match(/[abcd]/));
+
+        let text1 = "d";
+        console.log(text1.match(/[a-d]/));
+
+        let text2 = "t";
+        console.log(text2.match(/[a-zA-Z]/));
+
+        let text3 = "Just some text.";
+        console.log(text3.match(/./g));
+    </script>
+</body>
+
+</html>
+
+<!--
+. in a regular expression matches any single character except for newline characters.
+/g is the global flag, which indicates that the search should find all matches in the text, not just the first one.
+
+([a-zA-Z0-9._-]This part matches the local part of the element 
+It allows one or more characters from the set of lowercase letters (a-z), uppercase letters (A-Z), digits (0-9), and special characters (_, ., -).
+-->

@@ -44,7 +44,7 @@ switch (activity) {
 }
 
 /*Combining cases with Switch Page 81*/
-let grade = "";
+let grade = "A";
 
 switch(grade){
   case "F":

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Traversal Methods</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <div class="grandparent" id="grandparent">
+        <!-- "parent-1" & "parent-2" belongs to "grandparent"-->
+        <div class="parent" id="parent-1">
+            <!-- "child-1" & "child-2" belongs to "parent-1"-->
+            <div class="child" id="child-1">
+            </div>
+            <div class="child" id="child-2">
+            </div>
+        </div>
+        <div class="parent" id="parent-2">
+            <!-- "child-3" & "child-4" belongs to "parent-2"-->
+            <div class="child" id="child-3">
+            </div>
+            <div class="child" id="child-4">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //Part1
+        const grandparent = document.getElementById("grandparent");
+
+        // Selecting the element with id "parent-2" from the document, not from grandparent
+        const parent2 = document.getElementById("parent-2");
+
+        // Selecting multiple elements by class name "parent"
+        const parents = document.getElementsByClassName("parent");
+
+        // Selecting specific classes from a specific parent node
+        const childrenOfParent2 = parent2.getElementsByClassName("child");
+
+
+        // //Part2
+        // // Find an element node by a class using the "." CSS selector before the class
+        // const grandparent = document.querySelector(".grandparent");
+
+        // // Find an element node by an ID using the "#" CSS selector before the ID
+        // const parent2 = grandparent.querySelector("#parent-2");
+
+        // // Selecting multiple elements by class name "parent"
+        // const parents = document.getElementsByClassName("parent");
+
+        // // Selecting specific classes from a specific parent node
+        // const childrenOfParent2 = parent2.getElementsByClassName("child");
+
+        // // Logging to verify the selections
+        // console.log(grandparent);
+        // console.log(parent2);
+        // console.log(parents);
+        // console.log(childrenOfParent2);
+
+
+        // //Part3
+        // // Find an element node by a class using the "." CSS selector before the class
+        // const grandparent = document.querySelector(".grandparent");
+
+        // // Find an element node by an ID using the "#" CSS selector before the ID
+        // const parent2 = grandparent.querySelector("#parent-2");
+
+        // // Selecting multiple elements by class name "parent"
+        // const parentsByClassName = document.getElementsByClassName("parent");
+
+        // // Selecting multiple elements by class using the "." CSS selector before the class
+        // const parentsBySelectorAll = document.querySelectorAll(".parent");
+
+        // // Selecting specific classes from a specific parent node
+        // const childrenOfParent2 = parent2.getElementsByClassName("child");
+
+        // // Finding children of the first parent using querySelectorAll
+        // const childrenOfParentIndex0 = parentsBySelectorAll[0].querySelectorAll(".child");
+
+        // // Logging to verify the selections
+        // console.log(grandparent); // Logs the grandparent div
+        // console.log(parent2); // Logs the parent-2 div
+        // console.log(parentsByClassName); // Logs HTMLCollection of parents
+        // console.log(parentsBySelectorAll); // Logs NodeList of parents
+        // console.log(childrenOfParent2); // Logs HTMLCollection of children of parent-2
+        // console.log(childrenOfParentIndex0); // Logs NodeList of children of parent-1 (child-1 & child-2)
+
+
+        // //Part4
+        // // Find an element node by a class using the "." CSS selector before the class
+        // const grandparentByClass = document.querySelector(".grandparent");
+
+        // // Find an element node by an ID using the "#" CSS selector before the ID
+        // const parent2 = grandparentByClass.querySelector("#parent-2");
+
+        // // Selecting multiple elements by class name "parent"
+        // const parentsByClassName = document.getElementsByClassName("parent");
+
+        // // Selecting multiple elements by class using the "." CSS selector before the class
+        // const parentsBySelectorAll = document.querySelectorAll(".parent");
+
+        // // Selecting specific classes from a specific parent node
+        // const childrenOfParent2 = parent2.getElementsByClassName("child");
+
+        // // Finding children of the first parent using querySelectorAll
+        // const childrenOfParentIndex0 = parentsBySelectorAll[0].querySelectorAll(".child");
+
+        // // First, find a single element node
+        // const parent1 = document.querySelector("#parent-1");
+
+        // // Find the grandparent element from parent1
+        // const grandparentFromParent1 = parent1.parentElement;
+
+        // // Logging to verify the selections
+        // console.log(grandparentByClass); // Logs the grandparent div
+        // console.log(parent2); // Logs the parent-2 div
+        // console.log(parentsByClassName); // Logs HTMLCollection of parents
+        // console.log(parentsBySelectorAll); // Logs NodeList of parents
+        // console.log(childrenOfParent2); // Logs HTMLCollection of children of parent-2
+        // console.log(childrenOfParentIndex0); // Logs NodeList of children of parent-1 (child-1 & child-2)
+        // console.log(parent1); // Logs the parent-1 div
+        // console.log(grandparentFromParent1); // Logs the grandparent div containing all parents and children
+
+
+        // //Part5
+        // // Find an element node by a class using the "." CSS selector before the class
+        // const grandparentByClass = document.querySelector(".grandparent");
+
+        // // Find an element node by an ID using the "#" CSS selector before the ID
+        // const parent2 = grandparentByClass.querySelector("#parent-2");
+
+        // // Selecting multiple elements by class name "parent"
+        // const parentsByClassName = document.getElementsByClassName("parent");
+
+        // // Selecting multiple elements by class using the "." CSS selector before the class
+        // const parentsBySelectorAll = document.querySelectorAll(".parent");
+
+        // // Selecting specific classes from a specific parent node
+        // const childrenOfParent2 = parent2.getElementsByClassName("child");
+
+        // // Finding children of the first parent using querySelectorAll
+        // const childrenOfParentIndex0 = parentsBySelectorAll[0].querySelectorAll(".child");
+
+        // // First, find a single element node
+        // const parent1ById = document.querySelector("#parent-1");
+
+        // // Find the grandparent element from parent1
+        // const grandparentFromParent1 = parent1ById.parentElement;
+
+        // // Find the sibling of parent2 (i.e., parent1) using previousElementSibling
+        // const parent1FromSibling = parent2.previousElementSibling;
+
+        // // Logging to verify the selections
+        // console.log(grandparentByClass); // Logs the grandparent div
+        // console.log(parent2); // Logs the parent-2 div
+        // console.log(parentsByClassName); // Logs HTMLCollection of parents
+        // console.log(parentsBySelectorAll); // Logs NodeList of parents
+        // console.log(childrenOfParent2); // Logs HTMLCollection of children of parent-2
+        // console.log(childrenOfParentIndex0); // Logs NodeList of children of parent-1 (child-1 & child-2)
+        // console.log(parent1ById); // Logs the parent-1 div
+        // console.log(grandparentFromParent1); // Logs the grandparent div containing all parents and children
+        // console.log(parent1FromSibling); // Logs the parent-1 div found via previousElementSibling
+
+
+        // //Part6
+        // // Find an element node by a class using the "." CSS selector before the class
+        // const grandparentByClass = document.querySelector(".grandparent");
+
+        // // Find an element node by an ID using the "#" CSS selector before the ID
+        // const parent2 = grandparentByClass.querySelector("#parent-2");
+
+        // // Selecting multiple elements by class name "parent"
+        // const parentsByClassName = document.getElementsByClassName("parent");
+
+        // // Selecting multiple elements by class using the "." CSS selector before the class
+        // const parentsBySelectorAll = document.querySelectorAll(".parent");
+
+        // // Selecting specific classes from a specific parent node
+        // const childrenOfParent2 = parent2.getElementsByClassName("child");
+
+        // // Finding children of the first parent using querySelectorAll
+        // const childrenOfParentIndex0 = parentsBySelectorAll[0].querySelectorAll(".child");
+
+        // // First, find a single element node
+        // const parent1ById = document.querySelector("#parent-1");
+
+        // // Find the grandparent element from parent1
+        // const grandparentFromParent1 = parent1ById.parentElement;
+
+        // // Find the sibling of parent2 (i.e., parent1) using previousElementSibling
+        // const parent1FromSibling = parent2.previousElementSibling;
+
+        // // Find the first child of parent2
+        // const firstChildOfParent2 = parent2.firstElementChild;
+
+        // // Logging to verify the selections
+        // console.log(grandparentByClass); // Logs the grandparent div
+        // console.log(parent2); // Logs the parent-2 div
+        // console.log(parentsByClassName); // Logs HTMLCollection of parents
+        // console.log(parentsBySelectorAll); // Logs NodeList of parents
+        // console.log(childrenOfParent2); // Logs HTMLCollection of children of parent-2
+        // console.log(childrenOfParentIndex0); // Logs NodeList of children of parent-1 (child-1 & child-2)
+        // console.log(parent1ById); // Logs the parent-1 div
+        // console.log(grandparentFromParent1); // Logs the grandparent div containing all parents and children
+        // console.log(parent1FromSibling); // Logs the parent-1 div found via previousElementSibling
+        // console.log(firstChildOfParent2); // Logs the child-3 div, which is the first child of parent-2
+
+        // //Part7
+        // // Find an element node by a class using the "." CSS selector before the class
+        // const grandparentByClass = document.querySelector(".grandparent");
+
+        // // Find an element node by an ID using the "#" CSS selector before the ID
+        // const parent2 = grandparentByClass.querySelector("#parent-2");
+
+        // // Selecting multiple elements by class name "parent"
+        // const parentsByClassName = document.getElementsByClassName("parent");
+
+        // // Selecting multiple elements by class using the "." CSS selector before the class
+        // const parentsBySelectorAll = document.querySelectorAll(".parent");
+
+        // // Selecting specific classes from a specific parent node
+        // const childrenOfParent2 = parent2.getElementsByClassName("child");
+
+        // // Finding children of the first parent using querySelectorAll
+        // const childrenOfParentIndex0 = parentsBySelectorAll[0].querySelectorAll(".child");
+
+        // // First, find a single element node
+        // const parent1ById = document.querySelector("#parent-1");
+
+        // // Find the grandparent element from parent1
+        // const grandparentFromParent1 = parent1ById.parentElement;
+
+        // // Find the sibling of parent2 (i.e., parent1) using previousElementSibling
+        // const parent1FromSibling = parent2.previousElementSibling;
+
+        // // Find the first child of parent2
+        // const firstChildOfParent2 = parent2.firstElementChild;
+
+        // // Find the last child of parent2
+        // const lastChildOfParent2 = parent2.lastElementChild;
+
+        // // Logging to verify the selections
+        // console.log(grandparentByClass); // Logs the grandparent div
+        // console.log(parent2); // Logs the parent-2 div
+        // console.log(parentsByClassName); // Logs HTMLCollection of parents
+        // console.log(parentsBySelectorAll); // Logs NodeList of parents
+        // console.log(childrenOfParent2); // Logs HTMLCollection of children of parent-2
+        // console.log(childrenOfParentIndex0); // Logs NodeList of children of parent-1 (child-1 & child-2)
+        // console.log(parent1ById); // Logs the parent-1 div
+        // console.log(grandparentFromParent1); // Logs the grandparent div containing all parents and children
+        // console.log(parent1FromSibling); // Logs the parent-1 div found via previousElementSibling
+        // console.log(firstChildOfParent2); // Logs the child-3 div, which is the first child of parent-2
+        // console.log(lastChildOfParent2); // Logs the child-4 div, which is the last child of parent-2
+
+        // //Part8
+        // // Find an element node by a class using the "." CSS selector before the class
+        // const grandparentByClass = document.querySelector(".grandparent");
+
+        // // Find an element node by an ID using the "#" CSS selector before the ID
+        // const parent2 = grandparentByClass.querySelector("#parent-2");
+
+        // // Selecting multiple elements by class name "parent"
+        // const parentsByClassName = document.getElementsByClassName("parent");
+
+        // // Selecting multiple elements by class using the "." CSS selector before the class
+        // const parentsBySelectorAll = document.querySelectorAll(".parent");
+
+        // // Selecting specific classes from a specific parent node
+        // const childrenOfParent2 = parent2.getElementsByClassName("child");
+
+        // // Finding children of the first parent using querySelectorAll
+        // const childrenOfParentIndex0 = parentsBySelectorAll[0].querySelectorAll(".child");
+
+        // // First, find a single element node
+        // const parent1ById = document.querySelector("#parent-1");
+
+        // // Find the grandparent element from parent1
+        // const grandparentFromParent1 = parent1ById.parentElement;
+
+        // // Find the sibling of parent2 (i.e., parent1) using previousElementSibling
+        // const parent1FromSibling = parent2.previousElementSibling;
+
+        // // Find the first child of parent2
+        // const firstChildOfParent2 = parent2.firstElementChild;
+
+        // // Find the last child of parent2
+        // const lastChildOfParent2 = parent2.lastElementChild;
+
+        // // Find child nodes of parent2 using childNodes
+        // const child1OfParent2 = parent2.childNodes[1]; // Skip the text node, which is the first child node
+        // const child2OfParent2 = parent2.childNodes[3]; // Skip the text nodes
+
+        // // Logging to verify the selections
+        // console.log(grandparentByClass); // Logs the grandparent div
+        // console.log(parent2); // Logs the parent-2 div
+        // console.log(parentsByClassName); // Logs HTMLCollection of parents
+        // console.log(parentsBySelectorAll); // Logs NodeList of parents
+        // console.log(childrenOfParent2); // Logs HTMLCollection of children of parent-2
+        // console.log(childrenOfParentIndex0); // Logs NodeList of children of parent-1 (child-1 & child-2)
+        // console.log(parent1ById); // Logs the parent-1 div
+        // console.log(grandparentFromParent1); // Logs the grandparent div containing all parents and children
+        // console.log(parent1FromSibling); // Logs the parent-1 div found via previousElementSibling
+        // console.log(firstChildOfParent2); // Logs the child-3 div, which is the first child of parent-2
+        // console.log(lastChildOfParent2); // Logs the child-4 div, which is the last child of parent-2
+        // console.log(child1OfParent2); // Logs the child-3 div, which is the first element child of parent-2
+        // console.log(child2OfParent2); // Logs the child-4 div, which is the second element child of parent-2
+    </script>
+</body>
+
+</html>

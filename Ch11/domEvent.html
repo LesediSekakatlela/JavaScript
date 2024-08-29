@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        div {
+            border: 1px solid black;
+            margin-left: 5px;
+        }
+    </style>
+    <div id="message">Bubbling events</div>
+    <div id="output">
+        1
+        <div>
+            2
+            <div>
+                3
+                <div>
+                    4
+                    <div>5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="domEvent.js"></script>
+</html>
+
+<!--
+Line 27 this.innerText refers to the text content of the <div> element that triggered the event.
+Line 29 let divs = document.getElementsByTagName("div");: This line retrieves all <div> elements in the document and stores them in the variable divs.
+Line 31 divs[i].addEventListener("click", bubble);: For each <div>, it adds a click event listener that calls the bubble() function when the <div> is clicked.
+-->

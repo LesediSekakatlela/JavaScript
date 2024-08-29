@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>JavaScript HTML Events</h1>
+    <p id="unique">Click here for magic!</p>
+
+    <script>
+        function magic() {
+            var paragraph = document.getElementById("unique");
+            // Generate a random color
+            var colors = ["red", "blue", "green", "orange", "purple", "yellow"];
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+            // Apply the random color to the text
+            paragraph.style.color = randomColor;
+
+            console.log("Magic happened! Text color changed to: " + randomColor);
+        }
+
+        document.getElementById("unique").addEventListener("click", function () {
+            magic(); // Call the magic function when the paragraph is clicked
+        }
+        )
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!-- The eval() function in JavaScript is used to execute JavaScript code represented as a string. 
+When you pass a string containing JavaScript code to eval(), it will execute that code in the current scope. -->
+<!DOCTYPE html>
+<html>
+
+<body>
+    <input onchange="go(this)"></input>
+    <script>
+        function go(e) {
+            eval(e.value);
+        }
+    </script>
+</body>
+
+</html>
+<!-- Line 7 creates an input field. The onchange attribute specifies that when the content of this input field changes,
+the go() function should be called, passing this as an argument.
+
+Line 9 defines a function named go(). It takes one parameter e, which will represent the input element that triggered the change event.
+
+Line 10 This line uses the eval() function to execute the JavaScript code that is entered into the input field. 
+e.value retrieves the value of the input field (the JavaScript code entered by the user), and eval() executes it as JavaScript code.
+-->

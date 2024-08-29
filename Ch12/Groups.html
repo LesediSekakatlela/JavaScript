@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Groups
+    </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        let text = "I love JavaScript!";
+        console.log(text.match(/(love|dislike)\s(javascript|spiders)/gi));
+
+        let text1 = "You are doing great!";
+        console.log(text1.match(/n?g/gi))
+
+        let text2 = "abcabcabc";
+        console.log(text2.match(/(abc){1,3}/));
+
+    </script>
+</body>
+
+</html>
+
+<!--
+it will output an array of strings containing all sequences of four consecutive alphanumeric characters found in the string "I love JavaScript!".
+in other words it is outputting a word that has four letters.
+
+it will search for occurrences of 'ng' or just 'g' (since 'n' is optional) in the string "You are doing great!" 
+in a case-insensitive manner. It will output an array containing all such matches.
+
+it will search for sequences of "abc" that occur between 1 and 2 times consecutively in the string "abcabcabc". 
+Since the whole string "abcabcabc" contains such a sequence ("abc" repeated three times), the output will be an array containing
+the matched sequence "abcabc".
+
+-->

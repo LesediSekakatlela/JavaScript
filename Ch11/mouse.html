@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<body>
+    <div id="divvy" onmouseover="changeColor()" style="width: 100px; height: 100px; background-color: pink;">
+
+        <script>
+            function changeColor() {
+                document.getElementById("divvy").style.backgroundColor = "blue";
+            }
+        </script>
+
+</body>
+
+</html>
+
+<!--
+div element on line 4 with the ID "divvy". It has an inline event handler (onmouseover) that triggers the changeColor() 
+JavaScript function when the mouse cursor is moved over it. The style attribute sets the width, height, and background color of the div.
+-->
+
+<!-- <!doctype html>
+<html>
+
+<body>
+    <div id="divvy" style="width: 100px; height: 100px; backgroundcolor: pink;">
+        <script>
+            window.onload = function donenow() {
+                console.log("hi");
+                document.getElementById("divvy").addEventListener("mousedown",
+                    function () { changeColor(this, "green"); });
+                document.getElementById("divvy").addEventListener("mouseup",
+                    function () { changeColor(this, "yellow"); });
+                document.getElementById("divvy").addEventListener("dblclick",
+                    function () { changeColor(this, "black"); });
+                document.getElementById("divvy").addEventListener("mouseout",
+                    function () { changeColor(this, "blue"); });
+            }
+            console.log("hi2");
+            function changeColor(el, color) {
+                el.style.backgroundColor = color;
+            }
+        </script>
+</body>
+
+</html> -->
+
+<!--
+Line 28 window.onload: This event is triggered when the webpage finishes loading. It is set to execute the function donenow().
+
+Line 30  AND 31 document.getElementById("divvy").addEventListener("mousedown", ...): 
+This line adds an event listener to the div element with the id "divvy". When the mouse button is pressed down over the div, 
+the changeColor() function is called with the color "green".
+
+Line 36 AND 37 This line adds an event listener to the div element. When the mouse pointer moves out of the div area, 
+the changeColor() function is called with the color "blue".
+
+Line 40 AND 41 function changeColor(el, color) {...}: This function takes an element el and a color as arguments and changes the background color
+of the element to the specified color.
+-->

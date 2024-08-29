@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Call Back Function</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        function doSomething(callback) {
+            callback();
+        }
+        function sayHi() {
+            console.log("Hi!");
+        }
+        doSomething(sayHi);
+    </script>
+</body>
+
+</html>
+
+<!--
+
+The function doSomething(callback) takes another function (called callback) as input and runs it. 
+The function sayHi() just says "Hi!" When we call doSomething(sayHi), it essentially runs sayHi(), making it print "Hi!" to the console.
+-->

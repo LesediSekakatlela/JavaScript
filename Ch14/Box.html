@@ -1,0 +1,102 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="c1"></canvas>
+    <script>
+        let canvas = document.getElementById("c1");
+        let ctx = canvas.getContext("2d");
+        canvas.width = 500; //px
+        canvas.height = 500; //px
+
+        // Draw the first rectangle
+        ctx.fillStyle = "pink";
+        ctx.fillRect(20, 40, 100, 100);
+
+        // Draw the second rectangle
+        ctx.fillStyle = "black";
+        ctx.fillRect(150, 40, 100, 100);  // Adjusted position to not overlap with the first rectangle
+    </script>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="c1"></canvas>
+    <script>
+        let canvas = document.getElementById("c1");
+        let ctx = canvas.getContext("2d");
+        canvas.width = 500; //px
+        canvas.height = 500; //px
+
+        // Define rectangles
+        const pinkRect = { x: 20, y: 40, width: 100, height: 100, color: "pink" };
+        const blackRect = { x: 150, y: 40, width: 100, height: 100, color: "black" };
+
+        // Function to draw rectangles
+        function drawRect(rect) {
+            ctx.fillStyle = rect.color;
+            ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
+        }
+
+        // Draw both rectangles
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+            drawRect(pinkRect);
+            drawRect(blackRect);
+        }
+
+        // Initial drawing
+        draw();
+
+        // Handle click events
+        canvas.addEventListener('click', function (event) {
+            const rect = canvas.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            // Check if click is within the pink rectangle
+            if (x > pinkRect.x && x < pinkRect.x + pinkRect.width && y > pinkRect.y && y < pinkRect.y + pinkRect.height) {
+                pinkRect.color = "yellow";
+                draw();
+            }
+        });
+
+        // Handle mouse move events
+        canvas.addEventListener('mousemove', function (event) {
+            const rect = canvas.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            // Check if mouse is over the black rectangle
+            if (x > blackRect.x && x < blackRect.x + blackRect.width && y > blackRect.y && y < blackRect.y + blackRect.height) {
+                blackRect.color = "blue";
+            } else {
+                blackRect.color = "black";
+            }
+            draw();
+        });
+    </script>
+</body>
+
+</html>

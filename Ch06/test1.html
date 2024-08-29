@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+</head>
+
+<body>
+    <script>
+        let students = ['Joe', 'Sam', 'Jack', 'frik', 'bOB', 'Bobjr'];
+        let marks = [49, 30, 70, 99, 1, 80];
+        let studentAverage = getAverage();
+
+        function getAverage() {
+            let total = 0;
+
+            for (index = 0; index < marks.length; index++) {
+                total += marks[index];
+
+
+            }
+
+            let average = Math.round(total / students.length);
+            return average
+        }
+
+        console.log("The student average marks are: " + studentAverage);
+
+
+
+        function studentBelowOrAboveAvg() {
+            const average = getAverage();
+
+            for (let index = 0; index < marks.length; index++) {
+                const studentMark = marks[index];
+                const studentName = students[index];
+
+                if (studentMark >= average) {
+                    console.log(studentName + " is performing above or equal to the average.");
+                } else {
+                    console.log(studentName + " needs to do better.");
+                }
+            }
+        }
+
+        studentBelowOrAboveAvg();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Regular Expressions</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <!--This code is using JavaScript's String.prototype.match() method along with a regular expression to search for a pattern within a string. -->
+    <script>
+        let text = "I love JavaScript!";
+        console.log(text.match(/javascript/i));
+
+        let text1 = "I love React and JavaScript!";
+        console.log(text1.match(/javascript|nodejs|react/i));
+
+        let text2 = "I love React and JavaScript!";
+        console.log(text2.match(/javascript|nodejs|react/gi));
+
+    </script>
+
+</body>
+
+</html>
+
+<!--
+console.log(text.match(/javascript/i)):
+This line calls the match() method on the text string. The match() method is used to search a string for a specified pattern
+(in this case, a regular expression pattern) and returns an array containing the matches, or null if no matches are found.
+
+/javascript/i is a regular expression pattern that searches for the string "javascript" in a case-insensitive manner within another string.
+
+Index:    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+String:   I   l o v e   J a v a  S  c  r  i  p  t  !
+-->

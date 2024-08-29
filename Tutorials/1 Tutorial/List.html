@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="List.css">
+</head>
+<body>
+    <div class="todo-container">
+        <section>
+            <div class="content-container">
+                <h2>Local Storage To-Do List</h2>
+                <ul id="local-storage-todos-container"></ul>
+            </div>
+            <footer>
+                <input id="local-task-input" type="text" placeholder="Enter task">
+                <button id="local-storage-add-task-btn">Add task</button>
+            </footer>
+        </section>
+        <section>
+            <div class="content-container">
+                <h2>Session Storage To-Do List</h2>
+                <ul id="session-storage-todos-container"></ul>
+            </div>
+            <footer>
+                <input id="session-input" type="text" placeholder="Enter task">
+                <button id="session-storage-add-task-btn">Add task</button>
+            </footer>
+        </section>
+    </div>
+    <script src="List.js"></script>
+</body>
+</html>

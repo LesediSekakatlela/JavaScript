@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <title>Window onload</title>
+</head>
+<body>
+  <h1>Window onload Example</h1>
+  <script>
+    window.onload = function() {
+      console.log("All resources have loaded");
+
+      var heading = document.querySelector("h1");
+      heading.style.color = "blue";
+      heading.innerHTML = "Window onload Example (Updated)";
+    }
+  </script>
+</body>
+</html>
+
+<!-- Line 9 assigns a function to the window.onload event. 
+This function will execute once all resources (such as images, stylesheets, and scripts) on the page have finished loading.
+
+Line 12 selects the <h1> element using document.querySelector("h1"), changes its text color to blue using the style.color property on line 13, 
+and updates its inner HTML content to "Window onload Example (Updated)" using the innerHTML property on line 14. 
+-->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>onload Attribute Example</title>
+</head>
+<body onload="myFunction()">
+  <h1>onload Attribute Example</h1>
+  <script>
+    function myFunction() {
+      // This code will execute when the body element has finished loading
+      console.log("Body element has finished loading");
+
+      // Additional JavaScript code
+      var paragraph = document.createElement("p");
+      paragraph.textContent = "Hello, world!";
+      document.body.appendChild(paragraph);
+    }
+  </script>
+</body>
+</html> -->

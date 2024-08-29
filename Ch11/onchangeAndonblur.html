@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="welcome">Hi there!</div>
+    <form>
+        <input type="text" name="firstname" placeholder="First name" onchange="logEvent()" />
+        <input type="text" name="lastname" placeholder="Last name" onblur="logEvent()" />
+        <input type="button" onclick="sendInfo()" value="Submit" />
+    </form>
+    <script>
+        function logEvent() {
+            let p = event.target;
+            if (p.name == "firstname") {
+                message("First Name Changed to " + p.value);
+            } else {
+                message("Last Name Changed to " + p.value);
+            }
+        }
+        function sendInfo() {
+            let p = event.target.parentElement;
+            message("Welcome " + p.firstname.value + " " + p.lastname.value);
+        }
+
+        function message(m) {
+            document.getElementById("welcome").innerHTML = m;
+        }
+    </script>
+</body>
+
+</html>
+<!--
+longEvent() Function-uses the global object which is the event, the event.target is an input field that triggered the onchange or onblur event.
+This line checks if the name attribute of the input field (p) is equal to "firstname". If it is, it means that the event was triggered by changing the first name input field.
+-->

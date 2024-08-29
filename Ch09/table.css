@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    border: 10px solid #dd0909;
+    padding: 8px;
+    text-align: left;
+}
+
+td {
+    border: 10px solid rgb(176, 11, 221);
+    padding: 8px;
+    text-align: left;
+}

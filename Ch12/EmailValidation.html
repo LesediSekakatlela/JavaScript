@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Email validation</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        let emailPattern = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/g;
+        let validEmail = "maaike_1234@email.com";
+        let invalidEmail = "maaike@mail@.com";
+        console.log(validEmail.match(emailPattern));
+        console.log(invalidEmail.match(emailPattern));
+    </script>
+</body>
+
+</html>
+
+<!--
+([a-zA-Z0-9._-]+@): This part matches the local part of the email address before the '@' symbol. 
+It allows one or more characters from the set of lowercase letters (a-z), uppercase letters (A-Z), digits (0-9), and special characters (_, ., -).
+
+([a-zA-Z0-9._-]+\.): This part matches the domain part of the email address after the '@' symbol and before the '.'. 
+It follows the same pattern as the local part.
+
+([a-zA-Z0-9._-]+): This part matches the top-level domain part of the email address after the '.'. 
+It also follows the same pattern as the local part.
+
+"maaike_1234@email.com": This email address matches the pattern defined by emailPattern, so it appears in the output as expected.
+
+"maaike@mail@.com": This email address doesn't match the pattern because it contains multiple '@' symbols and a trailing dot,
+which violates the expected structure. Therefore, it doesn't appear in the output, resulting in null.
+-->
+
